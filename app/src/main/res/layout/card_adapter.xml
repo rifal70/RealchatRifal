@@ -1,37 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="5dp">
 
-    <TextView
-        android:id="@+id/tv_txt_date"
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:background="@color/colorPrimaryDark"
-        android:maxLength="12"
-        android:padding="1dp"
-        android:textColor="#FFFFFF"
-        android:textSize="12sp" />
-
-    <TextView
-        android:id="@+id/tv_txt_name"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
-        android:maxLength="12"
-        android:padding="2dp"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp" />
+        android:background="@drawable/bg_corner"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tv_txt_msg"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
-        android:padding="2dp"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp" />
+        <TextView
+            android:id="@+id/tv_txt_date"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:fontFamily="sans-serif-condensed"
+            android:maxLength="12"
+            android:padding="5dp"
+            android:textAlignment="textEnd"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            tools:text="21-12-2021" />
+
+        <TextView
+            android:id="@+id/tv_txt_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
+            android:maxLength="12"
+            android:padding="5dp"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            tools:text="Rfq" />
+
+        <TextView
+            android:id="@+id/tv_txt_msg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:padding="5dp"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            tools:text="woy anjer" />
+    </LinearLayout>
 
 </LinearLayout>

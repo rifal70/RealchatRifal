@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,31 +11,30 @@
     android:weightSum="1">
 
     <ListView
-        android:visibility="gone"
         android:id="@+id/listView"
         android:layout_width="match_parent"
-        android:layout_height="580dp"/>
+        android:layout_height="580dp"
+        android:visibility="gone" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_chat"
         android:layout_width="match_parent"
-        android:layout_height="580dp"/>
+        android:layout_height="match_parent"
+        android:layout_above="@+id/ll_txt_chat" />
 
     <ScrollView
-        android:visibility="gone"
         android:id="@+id/scrollView"
-        android:layout_width="378dp"
-        android:layout_height="157dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_weight="1.04">
+        android:layout_width="380dp"
+        android:layout_height="155dp"
+        android:layout_weight="1.04"
+        android:visibility="gone">
 
 
         <LinearLayout
-            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:visibility="gone"
             android:weightSum="2">
 
             <TextView
@@ -65,29 +64,26 @@
     </ScrollView>
 
     <LinearLayout
+        android:id="@+id/ll_txt_chat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="15dp"
+        android:background="#FFFFFF"
         android:orientation="horizontal"
         android:weightSum="1">
 
         <EditText
             android:id="@+id/editText"
-            android:layout_width="59dp"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/button"
-            android:layout_alignParentStart="true"
-            android:layout_toStartOf="@+id/button"
-            android:layout_weight="1.02" />
+            android:layout_weight="1" />
 
         <Button
             android:id="@+id/button"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="52dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
             android:drawableLeft="@drawable/ic_send_black_24dp" />
-
     </LinearLayout>
-
-</LinearLayout>
+</RelativeLayout>

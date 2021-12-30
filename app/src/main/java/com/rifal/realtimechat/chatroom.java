@@ -68,7 +68,6 @@ public class chatroom extends AppCompatActivity {
 //        arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list_of_rooms);
 //        listView.setAdapter(arrayAdapter);
 
-
         rvList.setHasFixedSize(true);
         ll = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         rvList.setLayoutManager(ll);
@@ -80,6 +79,8 @@ public class chatroom extends AppCompatActivity {
         String currentDateandTime2 = sdf2.format(new Date());
 
         Log.d("date", "onCreate: " + currentDateandTime);
+
+        rvList.smoothScrollToPosition(999999999);
 
         btn_send_msg.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,6 +100,10 @@ public class chatroom extends AppCompatActivity {
                     map2.put("name", user_name);
                     map2.put("msg", input_msg.getText().toString());
                     message_root.updateChildren(map2);
+
+                    input_msg.setText("");
+
+                    rvList.smoothScrollToPosition(999999999);
 
 //                    Intent i = new Intent(chatroom.this, chatroom.class).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
 //                    i.putExtra("room_name", room_name);
@@ -133,10 +138,11 @@ public class chatroom extends AppCompatActivity {
                 }
                 list_of_rooms.clear();
                 list_of_rooms.addAll(mylist);
-
                 chatadapter = new chatadapter(chatroom.this, list_of_rooms, genProductAdapterListener());
                 rvList.setAdapter(chatadapter);
                 chatadapter.notifyDataSetChanged();
+
+
                 Log.d("array", "onDataChange: " + list_of_rooms);
             }
 

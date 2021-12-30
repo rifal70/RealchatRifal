@@ -51,8 +51,15 @@ public class chatadapter extends RecyclerView.Adapter<chatadapter.Holder> {
         String[] arrayString2 = msgBefore.split(", name=");
         String msgAfter = arrayString2[0];
 
+        String[] arrayStringDate = list.split("time=");
+        String dateBefore = arrayStringDate[1];
+
+        String[] arrayStringDate2 = dateBefore.split("\\} \\}");
+        String dateAfter = arrayStringDate2[0];
+
         holder.tvtxt.setText(nameAfter);
         holder.tvtxtmsg.setText(msgAfter);
+        holder.tvtxtdate.setText(dateAfter);
     }
 
 
@@ -62,12 +69,13 @@ public class chatadapter extends RecyclerView.Adapter<chatadapter.Holder> {
     }
 
     public class Holder extends RecyclerView.ViewHolder {
-        TextView tvtxt, tvtxtmsg;
+        TextView tvtxt, tvtxtmsg, tvtxtdate;
         public Holder(View itemView, AdapterOnItemClickListener listener) {
             super(itemView);
             mListener = listener;
             tvtxt = itemView.findViewById(R.id.tv_txt_name);
             tvtxtmsg = itemView.findViewById(R.id.tv_txt_msg);
+            tvtxtdate = itemView.findViewById(R.id.tv_txt_date);
         }
 
     }
