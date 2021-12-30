@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -46,6 +47,7 @@ public class chatroom extends AppCompatActivity {
     chatadapter chatadapter;
     RecyclerView rvList;
     RecyclerView.LayoutManager ll;
+    LinearLayout llTxt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +58,8 @@ public class chatroom extends AppCompatActivity {
         input_msg = findViewById(R.id.editText);
         chat_conversation = findViewById(R.id.textView);
         chat_conversation2 = findViewById(R.id.textView2);
+        llTxt = findViewById(R.id.ll_txt_chat);
+
         rvList = findViewById(R.id.rv_chat);
 
         listView = findViewById(R.id.listView);
@@ -81,6 +85,10 @@ public class chatroom extends AppCompatActivity {
         Log.d("date", "onCreate: " + currentDateandTime);
 
         rvList.smoothScrollToPosition(999999999);
+
+        input_msg.setOnClickListener(view -> {
+            rvList.smoothScrollToPosition(999999999);
+        });
 
         btn_send_msg.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -130,6 +138,7 @@ public class chatroom extends AppCompatActivity {
 //                list_of_rooms.addAll(set);
 
                 mylist.clear();
+
                 for (DataSnapshot dns : dataSnapshot.getChildren()) {
                     dns.child("date").getValue();
                     Log.d("AAA", "onDataChange: " + dns);
@@ -141,7 +150,6 @@ public class chatroom extends AppCompatActivity {
                 chatadapter = new chatadapter(chatroom.this, list_of_rooms, genProductAdapterListener());
                 rvList.setAdapter(chatadapter);
                 chatadapter.notifyDataSetChanged();
-
 
                 Log.d("array", "onDataChange: " + list_of_rooms);
             }
@@ -188,6 +196,7 @@ public class chatroom extends AppCompatActivity {
             }
         };
     }
+
 
     private void append_chat_conversation(DataSnapshot dataSnapshot) {
         Iterator i = dataSnapshot.getChildren().iterator();
