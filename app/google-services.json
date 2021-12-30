@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "21985463934",
+    "firebase_url": "https://mychatproject-86777-default-rtdb.firebaseio.com",
+    "project_id": "mychatproject-86777",
+    "storage_bucket": "mychatproject-86777.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:21985463934:android:9a04cc92ca08378fa3922f",
+        "android_client_info": {
+          "package_name": "com.rifal.realtimechat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "21985463934-eahbe5v2kiinbibji8611lvd89s3m54h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rifal.realtimechat",
+            "certificate_hash": "a21f7e040da533a9d54c3c949577b8f4c9bdc52c"
+          }
+        },
+        {
+          "client_id": "21985463934-s3k3e5j6q6tuq483cc9hvor9b5vp17ja.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCu6ICSqBs8eIK8cEpItkvRQPlRF65IEr8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "21985463934-s3k3e5j6q6tuq483cc9hvor9b5vp17ja.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
