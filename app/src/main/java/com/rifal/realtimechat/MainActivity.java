@@ -33,7 +33,7 @@ import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button add_room;
+    Button add_room, btnmap;
     EditText room_name;
     ListView listView;
     String name;
@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
         Log.d("DeviceModel", "onCreate: " + getDeviceName());
 
+        btnmap = findViewById(R.id.btn_maps);
         add_room = findViewById(R.id.btn_add_room);
         room_name = findViewById(R.id.etNeme_room);
         listView = findViewById(R.id.listView);
@@ -78,6 +79,12 @@ public class MainActivity extends AppCompatActivity {
                     root.updateChildren(map);
                 }
             }
+        });
+
+        btnmap.setOnClickListener(v->
+        {
+            Intent i = new Intent(MainActivity.this, MapsActivity.class);
+            startActivity(i);
         });
 
         root.addValueEventListener(new ValueEventListener() {
